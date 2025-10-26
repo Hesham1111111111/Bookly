@@ -1,19 +1,20 @@
 import 'package:bookely/core/di/serveer_locator.dart';
 import 'package:bookely/core/resources/colors_app.dart';
+import 'package:bookely/core/routing/app_rout.dart';
 
-import 'package:bookely/featuers/home_books/ui/views/home_sceen.dart';
-import 'package:bookely/featuers/home_books/ui/views/widget/detailles_books/deteles_screen.dart';
 import 'package:bookely/featuers/splash/ui/views/widget/splash_body.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 void main() {
   setup();
-  runApp(const BookApp());
+  runApp(BookApp(appRouter: AppRouter()));
 }
 
 class BookApp extends StatelessWidget {
-  const BookApp({super.key});
+  const BookApp({super.key, required this.appRouter});
+
+  final AppRouter appRouter;
 
   @override
   Widget build(BuildContext context) {
@@ -23,10 +24,7 @@ class BookApp extends StatelessWidget {
       splitScreenMode: true,
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        routes: {
-          "HomeScreen": (context) => const HomeScreen(),
-          "DetelesScreen": (context) => const DetelesScreen(),
-        },
+        onGenerateRoute: AppRouter().generateRouter,
         theme: ThemeData.dark().copyWith(
           scaffoldBackgroundColor: AppColors.primaryColor,
         ),
