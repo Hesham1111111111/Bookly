@@ -2,13 +2,13 @@ import 'package:bookely/core/resources/images_app.dart';
 import 'package:bookely/core/resources/styles.dart';
 import 'package:bookely/featuers/home_books/data/model/book_model.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class BookItemFree extends StatelessWidget {
-   BookItemFree({super.key, required this.bookModel, required this.bookModels});
+  BookItemFree({super.key, required this.bookModel, required this.bookModels});
 
   final BookModel bookModel;
   final List<BookModel> bookModels;
-
 
   @override
   Widget build(BuildContext context) {
@@ -28,12 +28,12 @@ class BookItemFree extends StatelessWidget {
                 "DetelesScreen",
                 arguments: {
                   "image":
-                  bookModel.volumeInfo?.imageLinks?.thumbnail ??
+                      bookModel.volumeInfo?.imageLinks?.thumbnail ??
                       AppImages.testimage,
                   "title": bookModel.volumeInfo?.title ?? 'No title',
                   "Author":
-                  bookModel.volumeInfo?.authors != null &&
-                      bookModel.volumeInfo!.authors!.isNotEmpty
+                      bookModel.volumeInfo?.authors != null &&
+                          bookModel.volumeInfo!.authors!.isNotEmpty
                       ? bookModel.volumeInfo!.authors!.first
                       : 'Unknown Author',
                   "amount": bookModel.saleInfo?.listPrice?.amount != null
@@ -47,8 +47,8 @@ class BookItemFree extends StatelessWidget {
             },
 
             child: Container(
-              width: 100,
-              height: 150,
+              width: 100.w,
+              height: 150.h,
               decoration: BoxDecoration(
                 image: DecorationImage(
                   fit: BoxFit.fill,

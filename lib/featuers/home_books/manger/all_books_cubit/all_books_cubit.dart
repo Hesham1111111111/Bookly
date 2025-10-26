@@ -5,7 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 class AllAppCubit extends Cubit<AllBookState> {
   final HomeRepo homeRepo;
 
-  AllAppCubit(this.homeRepo) : super(AllBookInitial());
+  AllAppCubit( this.homeRepo) : super(AllBookInitial());
 
   getAllBooks() async {
     emit(AllBookLoading());

@@ -5,7 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 class FreeAppCubit extends Cubit<FreeBookState> {
   final HomeRepo homeRepo;
 
-  FreeAppCubit(this.homeRepo) : super(FreeBookInitial());
+  FreeAppCubit( this.homeRepo) : super(FreeBookInitial());
 
   getFreeBooks() async {
     emit(FreeBookLoading());

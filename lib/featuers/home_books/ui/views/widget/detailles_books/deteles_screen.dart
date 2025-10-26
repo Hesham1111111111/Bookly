@@ -1,5 +1,5 @@
 import 'package:bookely/core/resources/colors_app.dart';
-import 'package:bookely/featuers/home_books/ui/views/widget/detels_book.dart';
+import 'package:bookely/featuers/home_books/ui/views/widget/detailles_books/detels_book.dart';
 import 'package:flutter/material.dart';
 
 class DetelesScreen extends StatelessWidget {

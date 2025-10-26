@@ -1,6 +1,6 @@
 import 'package:bookely/core/resources/images_app.dart';
 import 'package:bookely/core/resources/styles.dart';
-import 'package:bookely/featuers/home_books/ui/views/widget/show_book.dart';
+import 'package:bookely/featuers/home_books/ui/views/widget/detailles_books/show_book.dart';
 import 'package:flutter/material.dart';
 
 class BookDetailsScreen extends StatelessWidget {

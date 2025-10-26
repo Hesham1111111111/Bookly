@@ -1,17 +1,18 @@
 import 'package:bookely/core/network/apiserver.dart';
+import 'package:bookely/core/network/endpoint.dart';
 import 'package:bookely/featuers/home_books/data/model/book_model.dart';
 import 'package:bookely/featuers/home_books/data/repo/home_repo.dart';
 import 'package:dartz/dartz.dart';
 
-class HomeRepoImplApi implements HomeRepo {
+class HomeRepoImplImp implements HomeRepo {
   final ApiServes apiServes;
 
-  HomeRepoImplApi({required this.apiServes});
+  HomeRepoImplImp({required this.apiServes});
 
   @override
   Future<Either<String, List<BookModel>>> fetcherAllBook() async {
     try {
-      var json = await apiServes.get(endpoint:"books/v1/volumes?Filtering=free-ebooks&q=programming");
+      var json = await apiServes.get(endpoint: AppEndPoints.endpoint);
       List<BookModel> books = [];
       for (var book in json["items"]) {
         books.add(BookModel.fromJson(book));
@@ -43,11 +44,10 @@ class HomeRepoImplApi implements HomeRepo {
   }
 
   @override
-  Future<Either<String, List<BookModel>>> fetcherCategoriesBook() async{
+  Future<Either<String, List<BookModel>>> fetcherCategoriesBook() async {
     try {
       var json = await apiServes.get(
-        endpoint:
-        "books/v1/volumes?q=subject:<category>",
+        endpoint: "books/v1/volumes?q=subject:<category>",
       );
       List<BookModel> books = [];
 
@@ -57,9 +57,6 @@ class HomeRepoImplApi implements HomeRepo {
       return right(books);
     } catch (e) {
       return left(e.toString());
-
     }
-
-
   }
 }

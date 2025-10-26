@@ -1,7 +1,7 @@
 import 'package:bookely/featuers/home_books/manger/free_books_cubit/free_books_cubit.dart';
 import 'package:bookely/featuers/home_books/manger/free_books_cubit/free_books_state.dart';
-import 'package:bookely/featuers/home_books/ui/views/widget/book_item_free.dart';
-import 'package:bookely/featuers/home_books/ui/views/widget/shimmer%20_free_book.dart';
+import 'package:bookely/featuers/home_books/ui/views/widget/free_books/book_item_free.dart';
+import 'package:bookely/featuers/home_books/ui/views/widget/free_books/shimmer%20_free_book.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -22,7 +22,10 @@ class ListViewFreeBook extends StatelessWidget {
                 itemCount: state.books.length,
 
                 itemBuilder: (context, index) {
-                  return BookItemFree(bookModel: state.books[index], bookModels:state.books,);
+                  return BookItemFree(
+                    bookModel: state.books[index],
+                    bookModels: state.books,
+                  );
                 },
               ),
             ),
@@ -36,10 +39,10 @@ class ListViewFreeBook extends StatelessWidget {
               child: ListView.builder(
                 shrinkWrap: true,
                 physics: NeverScrollableScrollPhysics(),
-                itemCount: 5,
+                itemCount: 6,
 
                 itemBuilder: (context, index) {
-                  return ShimeerFreeBook();
+                  return BookItemShimmer();
                 },
               ),
             ),

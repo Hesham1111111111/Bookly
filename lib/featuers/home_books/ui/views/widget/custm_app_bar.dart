@@ -1,5 +1,6 @@
 import 'package:bookely/core/resources/images_app.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustmAppBar extends StatelessWidget {
   const CustmAppBar({super.key});
@@ -14,8 +15,11 @@ class CustmAppBar extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Image.asset(AppImages.logo, width: 75, height: 16),
-                IconButton(onPressed: () {}, icon: Icon(Icons.search, size: 30)),
+                Image.asset(AppImages.logo, width: 75.w, height: 16.h),
+                IconButton(
+                  onPressed: () {},
+                  icon: Icon(Icons.search, size: 30),
+                ),
               ],
             ),
           ),

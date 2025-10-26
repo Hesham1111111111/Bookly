@@ -214,7 +214,6 @@ class ReadingModes {
   }
 }
 
-// Panelization Summary Model
 class PanelizationSummary {
   final bool? containsEpubBubbles;
   final bool? containsImageBubbles;
